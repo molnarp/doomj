@@ -15,7 +15,6 @@ public class WWad {
     //
     // GLOBALS
     //
-
     // Location of each lump on disk.
     static LumpInfo[] lumpinfo;
     static int numlumps;
@@ -33,7 +32,7 @@ public class WWad {
         return f.length();
     }
 
-    static String ExtractFileBase(String path, String dest) {
+    static String extractFileBase(String path, String dest) {
         String name = new File(path).getName();
         return name.substring(0, name.lastIndexOf('.') - 1);
     }
@@ -85,8 +84,8 @@ public class WWad {
         if (!filename.toLowerCase().endsWith("wad")) {
             // single lump file
             singleinfo.filepos = 0;
-            singleinfo.size = handle.length();
-            ExtractFileBase(filename, singleinfo.name);
+            singleinfo.size = ISystem.toInt(handle.length());
+            extractFileBase(filename, singleinfo.name);
             numlumps++;
         } else {
             // WAD file
@@ -273,7 +272,7 @@ public class WWad {
     // W_LumpLength
     // Returns the buffer size needed to load the given lump.
     //
-    long wLumpLength(int lump) {
+    int wLumpLength(int lump) {
         if (lump >= numlumps) {
             ISystem.iError("W_LumpLength: %i >= numlumps", Integer.toString(lump));
         }
@@ -319,7 +318,7 @@ public class WWad {
     //
     // W_CacheLumpNum
     //
-    byte[] W_CacheLumpNum(int lump, int tag) throws FileNotFoundException, IOException {
+    byte[] wCacheLumpNum(int lump, int tag) throws FileNotFoundException, IOException {
 
         if (lump >= numlumps) {
             ISystem.iError("W_CacheLumpNum: %i >= numlumps", Integer.toString(lump));
@@ -328,10 +327,13 @@ public class WWad {
         if (lumpcache[lump] == null) {
             // read the lump in
             //printf ("cache miss on lump %i\n",lump);
+            byte[] user = null;
+            ZZone.zMalloc(wLumpLength(lump), tag, user);
+            
             wReadLump(lump, lumpcache[lump]);
         } else {
             //printf ("cache hit on lump %i\n",lump);
-            zChangeTag(lumpcache[lump], tag);
+            ZZone.zChangeTag(ZZone.zWhichBlock(lumpcache[lump]), tag);
         }
 
         return lumpcache[lump];
@@ -341,7 +343,7 @@ public class WWad {
     // W_CacheLumpName
     //
     byte[] wCacheLumpName(String name, int tag) throws FileNotFoundException, IOException {
-        return W_CacheLumpNum(wGetNumForName(name), tag);
+        return wCacheLumpNum(wGetNumForName(name), tag);
     }
     //
     // W_Profile
@@ -364,7 +366,7 @@ public class WWad {
             if (ptr != null) {
                 continue;
             } else {
-                block = (MemBlock) lumpcache[i];
+                block = ZZone.zWhichBlock(lumpcache[i]);
 
                 if (block.tag < ZZone.PU_PURGELEVEL) {
                     ch = 'S';

@@ -14,5 +14,5 @@ public class LumpInfo {
     String name;
     File handle;
     int position;
-    long size;
+    int size;
 }

@@ -16,7 +16,7 @@ class FileLump {
   static final int SIZEOF = 12;
   
   int filepos;
-  long size;
+  int size;
   String name;  
   
   void read(InputStream in) throws IOException {      

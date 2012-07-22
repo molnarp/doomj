@@ -10,11 +10,10 @@ package hu.mpsw.doomj;
  */
 public class MemBlock {
     int size;	// including the header and possibly tiny fragments
-    byte[][]	user;	// NULL if a free block
+    byte[] user;	// NULL if a free block
     int tag;	// purgelevel
     int id;	// should be ZONEID
-    MemBlock next;
-    MemBlock prev;
+    boolean owned;
     
     public static final int SIZEOF = 24;
 }
