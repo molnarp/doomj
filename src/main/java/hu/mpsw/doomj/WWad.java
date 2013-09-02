@@ -18,7 +18,7 @@ public class WWad {
     // Location of each lump on disk.
     static LumpInfo[] lumpinfo;
     static int numlumps;
-    byte[][] lumpcache;
+    static byte[][] lumpcache;
 
     //#define strcmpi	strcasecmp
     static void strupr(StringBuilder s) {
@@ -34,8 +34,9 @@ public class WWad {
 
     static String extractFileBase(String path, String dest) {
         String name = new File(path).getName();
-        return name.substring(0, name.lastIndexOf('.') - 1);
+        return name.substring(0, name.lastIndexOf('.'));
     }
+    
     //
     // LUMP BASED ROUTINES.
     //
@@ -74,11 +75,11 @@ public class WWad {
         File handle = new File(filename);
         //FileDescriptor handle = new FileDescriptor
         if (!handle.isFile() || !handle.canRead()) {
-            System.err.printf(" couldn't open %s\n", filename);
+            Doomj.LOG.error(" couldn't open %s\n", filename);
             return;
         }
 
-        System.err.printf(" adding %s\n", filename);
+        Doomj.LOG.info(" adding %s\n", filename);
         startlump = numlumps;
 
         if (!filename.toLowerCase().endsWith("wad")) {
@@ -90,7 +91,7 @@ public class WWad {
         } else {
             // WAD file
             // read (handle, &header, sizeof(header));
-            FileInputStream fin = new FileInputStream(handle);
+            BufferedInputStream fin = new BufferedInputStream(new FileInputStream(handle));
             header.read(fin);
 
             if (!"IWAD".equals(header.identification)) {

@@ -117,36 +117,36 @@ public class WiStuff {
     //  as they replace 320x200 full screen frames.
     //
     public static final Anim[] epsd0animinfo = {
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/3, 3, new Point(224, 104)),
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/3, 3, new Point(184, 160)),
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/3, 3, new Point(112, 136)),
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/3, 3, new Point(72, 112)),
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/3, 3, new Point(88, 96)),
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/3, 3, new Point(64, 48)),
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/3, 3, new Point(192, 40)),
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/3, 3, new Point(136, 16)),
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/3, 3, new Point(80, 16)),
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/3, 3, new Point(64, 24))
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/3, 3, new Point(224, 104)),
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/3, 3, new Point(184, 160)),
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/3, 3, new Point(112, 136)),
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/3, 3, new Point(72, 112)),
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/3, 3, new Point(88, 96)),
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/3, 3, new Point(64, 48)),
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/3, 3, new Point(192, 40)),
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/3, 3, new Point(136, 16)),
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/3, 3, new Point(80, 16)),
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/3, 3, new Point(64, 24))
     };
 
     public static final Anim[] epsd1animinfo = {
-        new Anim(AnimEnum.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 1),
-        new Anim(AnimEnum.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 2),
-        new Anim(AnimEnum.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 3),
-        new Anim(AnimEnum.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 4),
-        new Anim(AnimEnum.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 5),
-        new Anim(AnimEnum.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 6),
-        new Anim(AnimEnum.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 7),
-        new Anim(AnimEnum.AnimLevel, DoomDef.TICRATE/3, 3, new Point(192, 144), 8),
-        new Anim(AnimEnum.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 8)
+        new Anim(AnimType.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 1),
+        new Anim(AnimType.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 2),
+        new Anim(AnimType.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 3),
+        new Anim(AnimType.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 4),
+        new Anim(AnimType.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 5),
+        new Anim(AnimType.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 6),
+        new Anim(AnimType.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 7),
+        new Anim(AnimType.AnimLevel, DoomDef.TICRATE/3, 3, new Point(192, 144), 8),
+        new Anim(AnimType.AnimLevel, DoomDef.TICRATE/3, 1, new Point(128, 136), 8)
     };
 
     public static final Anim[] epsd2animinfo = {
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/3, 3, new Point(104, 168)),
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/3, 3, new Point(40, 136)),
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/3, 3, new Point(160, 96)),
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/3, 3, new Point(104, 80)),
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/3, 3, new Point(120, 32)),
-        new Anim(AnimEnum.AnimAlways, DoomDef.TICRATE/4, 3, new Point(40, 0))
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/3, 3, new Point(104, 168)),
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/3, 3, new Point(40, 136)),
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/3, 3, new Point(160, 96)),
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/3, 3, new Point(104, 80)),
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/3, 3, new Point(120, 32)),
+        new Anim(AnimType.AnimAlways, DoomDef.TICRATE/4, 3, new Point(40, 0))
     };    
 }

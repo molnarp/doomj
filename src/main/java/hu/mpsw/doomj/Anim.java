@@ -9,7 +9,7 @@ package hu.mpsw.doomj;
  * @author mp
  */
 public class Anim {
-    AnimEnum type;
+    AnimType type;
 
     // period in tics between animations
     int period;
@@ -50,14 +50,14 @@ public class Anim {
     public Anim() {
     }
 
-    public Anim(AnimEnum type, int period, int nanims, Point loc) {
+    public Anim(AnimType type, int period, int nanims, Point loc) {
         this.type = type;
         this.period = period;
         this.nanims = nanims;
         this.loc = loc;
     }
 
-    public Anim(AnimEnum type, int period, int nanims, Point loc, int data1) {
+    public Anim(AnimType type, int period, int nanims, Point loc, int data1) {
         this.type = type;
         this.period = period;
         this.nanims = nanims;

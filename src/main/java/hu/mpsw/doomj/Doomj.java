@@ -4,12 +4,17 @@
  */
 package hu.mpsw.doomj;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  *
  * @author Peter
  */
 public class Doomj {
 
+    
+    public static final Logger LOG = LoggerFactory.getLogger(Doomj.class);
   /**
    * @param args the command line arguments
    */

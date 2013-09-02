@@ -8,7 +8,7 @@ package hu.mpsw.doomj;
  *
  * @author mp
  */
-public enum AnimEnum {
+public enum AnimType {
     AnimAlways,
     AnimRandom,
     AnimLevel;    

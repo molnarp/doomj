@@ -18,7 +18,7 @@ class WadInfo {
   // Should be "IWAD" or "PWAD".
   String identification;
   int numlumps;
-  int	infotableofs;
+  int infotableofs;
 
   void read(InputStream in) throws IOException {      
     byte[] bytes = new byte[4];

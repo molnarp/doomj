@@ -13,6 +13,9 @@ public class ISystem {
     public static final int MB_USED = 6;
 
     static void iError(String... error) {
+        for (String emsg : error) {
+            Doomj.LOG.error(emsg);
+        }
     }
     
     static int toInt(long l) {
